@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Display with Preserved Formatting</title>
+<style>
+    /* Style to preserve spaces and line breaks */
+    pre {
+        white-space: pre-wrap; /* Ensures that white spaces and line breaks are preserved */
+        font-family: monospace; /* Optional: Use a monospace font for consistent spacing */
+        margin: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+    <h2>Enter Text:</h2>
+    <form id="textInputForm">
+        <textarea id="textInput" rows="6" placeholder="Enter text including spaces and line breaks"></textarea>
+        <button type="button" onclick="fetchText()">Fetch Text</button>
+    </form>
+    <div id="output">
+        <h3>Fetched Text:</h3>
+        <pre id="fetchedText"></pre>
+    </div>
+
+    <script>
+        function fetchText() {
+            const input = document.getElementById('textInput').value;
+            const fetchedText = document.getElementById('fetchedText');
+            fetchedText.textContent = input; // Display the input text with preserved formatting
+        }
+    </script>
+</body>
+</html>
+
